@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://en35yef4c337"]
 
-[ext_resource type="Texture2D" uid="uid://iuk57ddukm04" path="res://enemy.png" id="1_sk0ut"]
-[ext_resource type="Script" path="res://enemy.gd" id="1_ydu7q"]
+[ext_resource type="Script" path="res://script/enemy.gd" id="1_imcp7"]
+[ext_resource type="Texture2D" uid="uid://iuk57ddukm04" path="res://assets/enemy.png" id="1_sk0ut"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbi61"]
 atlas = ExtResource("1_sk0ut")
@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_ydu7q")
+script = ExtResource("1_imcp7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(161, 272)

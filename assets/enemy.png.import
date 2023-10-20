@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsrokx1kue3i5"
-path="res://.godot/imported/Wheel_2.png-dfac74c5a8a92f8922fcf3309a933509.ctex"
+uid="uid://iuk57ddukm04"
+path="res://.godot/imported/enemy.png-63f114c7bb3f2105c232c34f647cbc2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wheel_2.png"
-dest_files=["res://.godot/imported/Wheel_2.png-dfac74c5a8a92f8922fcf3309a933509.ctex"]
+source_file="res://assets/enemy.png"
+dest_files=["res://.godot/imported/enemy.png-63f114c7bb3f2105c232c34f647cbc2d.ctex"]
 
 [params]
 

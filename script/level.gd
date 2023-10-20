@@ -1,6 +1,6 @@
 extends Node2D
 
-const BULLET = preload("res://bullet.tscn")
+const BULLET = preload("res://scenes/bullet.tscn")
 
 func shoot_left():
 	$enemy_left/AnimatedSprite2D.play('default')

@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="QGCon 2023"
-run/main_scene="res://main_char.tscn"
+run/main_scene="res://scenes/main_char.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
+Global="*res://script/global.gd"
 
 [display]
 
