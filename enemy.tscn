@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://en35yef4c337"]
+
+[ext_resource type="Texture2D" uid="uid://iuk57ddukm04" path="res://enemy.png" id="1_sk0ut"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_ydu7q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbi61"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(0, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpybu"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(320, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srlwa"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(640, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmufq"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(960, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcqpu"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(1280, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bagkm"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(1600, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66rtv"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(1920, 0, 320, 544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8nlt"]
+atlas = ExtResource("1_sk0ut")
+region = Rect2(2240, 0, 320, 544)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6aei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbi61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpybu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srlwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmufq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcqpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bagkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66rtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8nlt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ydu7q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(161, 272)
+sprite_frames = SubResource("SpriteFrames_v6aei")
+frame = 7
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
