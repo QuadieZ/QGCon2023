@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddd5b5f2xtewx"]
+[gd_scene load_steps=8 format=3 uid="uid://ddd5b5f2xtewx"]
 
 [ext_resource type="Script" path="res://script/level.gd" id="1_fwh7y"]
 [ext_resource type="PackedScene" uid="uid://bsr4hr7arvwm2" path="res://scenes/main_char.tscn" id="2_vk147"]
 [ext_resource type="PackedScene" uid="uid://en35yef4c337" path="res://scenes/enemy.tscn" id="3_31e88"]
+[ext_resource type="AudioStream" uid="uid://s0y3ncqhb0d6" path="res://songs/Queerjam track.wav" id="4_0plut"]
+[ext_resource type="PackedScene" uid="uid://dyl4ii5cds87o" path="res://scenes/unicorn.tscn" id="5_8cdbm"]
+[ext_resource type="Texture2D" uid="uid://cl1enqmi4e0a8" path="res://assets/background.png" id="6_e8mtr"]
+[ext_resource type="FontFile" uid="uid://73xngvrge1e" path="res://assets/edit-undo.brk.ttf" id="7_rrsqg"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fwh7y")
@@ -13,13 +17,15 @@ offset_bottom = 544.0
 color = Color(0.168627, 0, 0.0627451, 1)
 
 [node name="player" parent="." instance=ExtResource("2_vk147")]
+z_index = 1
 position = Vector2(480, 272)
 
 [node name="enemy_left" parent="." instance=ExtResource("3_31e88")]
-position = Vector2(1, -2)
+z_index = 1
 
 [node name="enemy_right" parent="." instance=ExtResource("3_31e88")]
-position = Vector2(961, -2)
+z_index = 1
+position = Vector2(961, 0)
 rotation = -6.28319
 scale = Vector2(-1, 1)
 
@@ -44,7 +50,72 @@ autostart = true
 
 [node name="Timer_bottom" type="Timer" parent="."]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0plut")
+
+[node name="unicorn_bottom_left" parent="." instance=ExtResource("5_8cdbm")]
+visible = false
+z_index = 2
+position = Vector2(204, 440)
+
+[node name="unicorn_top_right" parent="." instance=ExtResource("5_8cdbm")]
+visible = false
+z_index = 2
+position = Vector2(745, 104)
+scale = Vector2(-1, -1)
+
+[node name="unicorn_top_left" parent="." instance=ExtResource("5_8cdbm")]
+visible = false
+z_index = 2
+position = Vector2(204, 104)
+scale = Vector2(1, -1)
+
+[node name="unicorn_bottom_right" parent="." instance=ExtResource("5_8cdbm")]
+visible = false
+z_index = 2
+position = Vector2(768, 440)
+scale = Vector2(-1, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+self_modulate = Color(1, 1, 1, 0.0705882)
+position = Vector2(480, 272)
+texture = ExtResource("6_e8mtr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 353.0
+offset_top = 414.0
+offset_right = 629.0
+offset_bottom = 439.0
+theme_override_fonts/font = ExtResource("7_rrsqg")
+theme_override_font_sizes/font_size = 24
+text = "Press Spacebar to Start"
+
+[node name="Score" type="Label" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 427.0
+offset_top = 442.0
+offset_right = 547.0
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_rrsqg")
+theme_override_font_sizes/font_size = 24
+text = "Test Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="song_bar" type="ColorRect" parent="."]
+offset_bottom = 10.0
+color = Color(0.137255, 0.45098, 0.521569, 1)
+
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="ready" from="enemy_right" to="." method="_on_enemy_right_ready"]
 [connection signal="timeout" from="Timer_left" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_left" to="." method="_on_timer_left_timeout"]
 [connection signal="timeout" from="Timer_right" to="." method="_on_timer_right_timeout"]

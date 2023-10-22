@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://4jo78jqmvaor" path="res://assets/Char_run_sprite.png" id="3_phc2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqt5n"]
-size = Vector2(52, 24)
+size = Vector2(49, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qaa1"]
 atlas = ExtResource("3_phc2v")
@@ -83,7 +83,7 @@ texture = ExtResource("2_25fev")
 [node name="ReflectorBlack" type="Area2D" parent="Sprite2D"]
 
 [node name="BlackShape" type="CollisionShape2D" parent="Sprite2D/ReflectorBlack"]
-position = Vector2(-103, 0)
+position = Vector2(-101.5, 0)
 shape = SubResource("RectangleShape2D_qqt5n")
 
 [node name="ReflectorWhite" type="Area2D" parent="Sprite2D"]
